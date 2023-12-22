@@ -1,6 +1,5 @@
 package dan.ms.tp.msusuarios.service;
 
-import dan.ms.tp.msusuarios.exception.ClienteNoEncontradoException;
 import dan.ms.tp.msusuarios.modelo.Cliente;
 
 public interface ClienteService {
@@ -13,4 +12,5 @@ public interface ClienteService {
     void deleteCliente(Integer id);
 
     Cliente updateCliente(Cliente cliente);
+    boolean hasGerente(Integer clienteId);
 }

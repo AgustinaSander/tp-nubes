@@ -12,5 +12,5 @@ import java.util.List;
 @Repository
 public interface UsuarioJpaRepository extends JpaRepository<Usuario,Integer>{
     List<Usuario> findAllByCliente(Cliente cliente);
-    List<Usuario> findAllByClienteByTipoUsuario(Cliente cliente, TipoUsuario tipoUsuario);
+    List<Usuario> findAllByClienteAndTipoUsuario(Cliente cliente, TipoUsuario tipoUsuario);
 }

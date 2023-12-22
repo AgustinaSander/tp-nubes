@@ -1,6 +1,8 @@
 package dan.ms.tp.msusuarios.rest;
 
 import java.util.List;
+
+import dan.ms.tp.msusuarios.service.TipoUsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,12 +17,10 @@ import dan.ms.tp.msusuarios.modelo.TipoUsuario;
 public class TipoUsuarioController {
  
     @Autowired
-    TipoUsuarioJpaRepository tipoUsrRepo;
-
+    TipoUsuarioService tipoUsuarioService;
 
     @GetMapping
-    public ResponseEntity<List<TipoUsuario>> getAllTipoUsuario(){
-        return ResponseEntity.ok().body(tipoUsrRepo.findAll());
+    public ResponseEntity<List<TipoUsuario>> getTipoUsuarioList(){
+        return ResponseEntity.ok().body(tipoUsuarioService.getTipoUsuarioList());
     }
-
 }
